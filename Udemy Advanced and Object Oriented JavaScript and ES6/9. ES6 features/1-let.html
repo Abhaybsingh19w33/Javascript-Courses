@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<body>
+    <script>
+        // checking the scope of var
+        function varDemo() {
+            var i = 10;
+            // here the scope if var is the whole 
+            // function block exceeds for loop block
+            for (var i = 0; i <= 20; i++) {
+                document.write(i + '<br>');
+            }
+            document.write('Out side of loop <br>');
+            //  here value of i should be 10, but due to whole function scope i =21
+            document.write(i + '<br>');
+        }
+        varDemo();
+
+        document.write('<br>');
+        // checking the scope of let
+        function letDemo() {
+            var i = 10;
+            // here the scope if let is the loop block 
+            // it does not exceeds for loop block
+            for (let i = 0; i <= 20; i++) {
+                document.write(i + '<br>');
+            }
+            document.write('Out side of loop <br>');
+            // here we get i=10,the scope of variable i 
+            // scope does not exceeds loop block
+            document.write(i + '<br>');
+        }
+        letDemo();
+
+        
+    </script>
+</body>
+
+</html>

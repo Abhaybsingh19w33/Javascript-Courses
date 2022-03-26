@@ -1,0 +1,56 @@
+<html>
+
+<body>
+    <script>
+        let student = {
+            name: "Abhay",
+            last: "Singh",
+            score: 100
+        };
+
+        // the properties which are going to be extracted should be mentioned on left side and
+        // the properties which are to be extracted from should be mentioned on right side
+        const { name: fname, last: lname, score: scr } = student;
+
+        document.write('fname ' + fname + ' <br>');
+        document.write('lname ' + lname + ' <br>');
+        document.write('scr ' + scr + ' <br>');
+        document.write('<br>');
+        // short cut method to extract the variable
+        // same name can be used to extract them
+        // even no need to mention the properties whixh are going to be extracted
+        // the name should be same as the variable which extracted from
+        const { name, last, score } = student;
+
+        document.write('fname ' + name + ' <br>');
+        document.write('lname ' + last + ' <br>');
+        document.write('scr ' + score + ' <br>');
+        document.write('<br>');
+        // for array destructuring the square bracket should be used
+        const courses = ['Angular', 'React', 'Node'];
+
+        const [course1, course2, course3] = courses;
+        document.write(course1 + '<br>');
+        document.write(course2 + '<br>');
+        document.write(course3 + '<br>');
+        document.write('<br>');
+
+        //  passing dynamic parameters
+        // function add(options) {
+        //     document.write(options.num1 + options.num2 + options.num3);
+        // }
+
+        // other way
+        // can also setup default values
+        function add({ num1 = 60, num2, num3 }) {
+            document.write(num1 + num2 + num3 + '<br>');
+        }
+        add({ num1: 10, num2: 20, num3: 30 });
+        add({ num2: 20, num3: 30 });
+
+
+
+    </script>
+</body>
+
+</html>

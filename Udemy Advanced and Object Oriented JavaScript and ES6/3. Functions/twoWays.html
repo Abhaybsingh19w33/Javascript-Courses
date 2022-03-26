@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<script>
+
+		//this function have a name
+		//    this will invoke the function in any order you want
+		function evenOrOdd(num) {
+			document.write(arguments[1] + "<br/>");
+			document.write(arguments.length + "<br/>")
+			document.write(evenOrOdd.length + "<br/>")
+			if (num % 2 == 0) {
+				return "even";
+			} else {
+				return "odd";
+			}
+		}
+
+		var e = evenOrOdd;
+
+		document.write(e(10, 20, 30, 40));
+
+		//    this functioond deos not have a name but we are assigning to a variable
+		//    this will work in a specific order
+		//    we have to eclarethe function first, then only we can use it afterwards
+		var evenOrOdd2 = function (num) {
+			if (num % 2 == 0) {
+				return "even";
+			} else {
+				return "odd";
+			}
+		};
+
+		document.write(evenOrOdd2(5));
+
+	</script>
+</head>
+
+</html>

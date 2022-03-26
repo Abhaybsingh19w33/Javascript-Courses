@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<script>
+		// explicitly rerturn object of particular type
+		function Flight(airlines, flightNumber) {
+			this.airlines = airlines;
+			this.flightNumber = flightNumber;
+
+			this.display = function () {
+				console.log(this.airlines);
+				console.log(this.flightNumber);
+			};
+		}
+
+		var flight1 = new Flight("American Airlines", "AA123");
+		var flight2 = new Flight("South West", "SW456");
+
+		flight1.display();
+		flight2.display();
+
+		console.log(flight1 instanceof Flight);
+		console.log(flight2 instanceof Flight);
+
+		console.log(flight1.constructor === Flight);
+		console.log(flight2.constructor === Flight);
+
+		// assignment
+		function Laptop(manifacturer, memory, capacity) {
+			this.manifacturer = manifacturer;
+			this.memory = memory;
+			this.capacity = capacity;
+
+		function Laptop(manifacturer, memory, capacity) {
+				this.manifacturer = manifacturer;
+				this.memory = memory;
+				this.capacity = capacity;
+
+				this.display = function () {
+					console.log(this.manifacturer);
+					console.log(this.memory);
+					console.log(this.capacity);
+				};
+			}
+
+			var laptop1 = new Laptop("Asus", "8Gb", "1Tb");
+			var laptop2 = new Laptop("Dell", "8Gb", "2Tb");
+			laptop1.display();
+			laptop2.display();	this.display = function () {
+				console.log(this.manifacturer);
+				console.log(this.memory);
+				console.log(this.capacity);
+			};
+		}
+
+		var laptop1 = new Laptop("Asus", "8Gb", "1Tb");
+		var laptop2 = new Laptop("Dell", "8Gb", "2Tb");
+		laptop1.display();
+		laptop2.display();
+	</script>
+</head>
+
+</html>

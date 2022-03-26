@@ -1,0 +1,52 @@
+<html>
+
+<body>
+    <script>
+        function myAsyncFunc() {
+            // to tell the js engine     that weare done with the working
+            // we will use the parameter which promises use
+            // these are function
+            let promise = new Promise((resolve, reject) => {
+                let error = false;
+                setTimeout(() => {
+                    document.write("Working asynchronously! <br>");
+                    // resolve tell we are done with the work
+                    if (error) {
+                        // reject( );
+                        // can also pass values to the call back function
+                        reject("Error");
+                    }
+                    else {
+                        resolve("Done");
+                    }
+
+
+                }, 1000)
+            });
+            return promise;
+        };
+        // myAsyncFunc return promise to handle the promise we us 'then'
+        // then accepts 2 parameters first for success and second for failure
+
+        // if resolve is executed then first parameter is executed
+        // if reject is executed then second parameter is executed
+        // myAsyncFunc().then(
+        //     // handling return values
+        //     (success) => {
+        //         document.write("Work Done! <br>");
+        //         document.write(success + "<br>");
+        //     },
+        //     (error) => {
+        //         document.write("Error! <br>");
+        //         document.write(error + "<br>")
+        //     }
+        // );
+
+        // handling error on another way
+        myAsyncFunc().then(
+            (success) => document.write(success + "<br>")
+        ).catch((error) => document.write(error));
+    </script>
+</body>
+
+</html>

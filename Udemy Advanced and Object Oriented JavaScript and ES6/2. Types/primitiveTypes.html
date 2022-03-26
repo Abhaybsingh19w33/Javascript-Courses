@@ -1,0 +1,45 @@
+<html>
+<head>
+<script>
+
+var customerName = "John";
+var accountBalance = 2000;
+var isValid=true;
+
+//    null is different than any other primitive types
+var object = null;
+
+var x = 123;
+var y=x;
+y=456;
+var s="123";
+
+var s1 = "You are the CREATOR of your destiny";
+
+//    to lower the case of the String
+document.write(s1.toLowerCase()+"<br/>");
+//    getting the portion of the string
+document.write(s1.substring(5,10)+"<br/>");
+//    getting the character at the specific position
+document.write(s1.charAt(8)+"<br/>");
+
+//    type of the datatype
+document.write(typeof x.toString()+"<br/>");
+//    changing the boolean type to string
+document.write(typeof isValid.toString()+"<br/>");
+
+
+
+
+document.write(typeof customerName+"<br/>");
+document.write(typeof accountBalance+"<br/>");
+document.write(typeof isValid+"<br/>");
+//    perfect way to check the type of null
+document.write((object===null)+"<br/>");
+document.write(typeof x+"<br/>");
+document.write(y+"<br/>");
+document.write(x===s);
+
+</script>
+</head>
+</html>

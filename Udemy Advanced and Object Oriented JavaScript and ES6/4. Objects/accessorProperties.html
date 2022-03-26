@@ -1,0 +1,31 @@
+<html>
+
+<head>
+	<script>
+
+		var creditCard = {
+			// private variable
+			_name: "John",
+			// getter  - without getter you can't get the value
+			get name() {
+				return this._name;
+			},
+			// setter -same for setter
+			// if setter is not defined then the value cannot be changed
+			set name(value) {
+				this._name = value;
+			}
+
+		};
+
+		// retreiving the name via accessor
+		console.log(creditCard.name);
+
+		// set accessor
+		creditCard.name = "Bob";
+		console.log(creditCard.name);
+
+	</script>
+</head>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<body>
+    <script>
+        "use strict";
+        var pi = 3.14;
+        pi = 3.79; // this will make the output wrong
+        document.write('pi ' + pi + '<br>');
+
+        //  IT DECLARES variable at block level
+        const PI = 3.14; 
+        // PI = 3.79; // this will make an error
+        document.write('const PI ' + PI + '<br>');
+
+        // ONCE WE declare a variable with object we can't assign it with another object
+        const product ={};
+        // product = {}; // error
+        // but we can still add some properties to object itself 
+        product['name'] = "abhay";
+        document.write('product[\'name\'] ' + product['name'] + '<br>');
+
+        // to prevent the object from being modified, we ccan freeze the object`
+
+        const product2 = Object.freeze({});
+            // product = {}; // error
+            // but we can still add some properties to object itself 
+            // product2['name'] = "abhay"; // undefined
+            document.write('product2[\'name\'] ' + product2['name'] + '<br>');
+
+            // or we can use strict to prevent the modification of the object
+
+    </script>
+</body>
+
+</html>

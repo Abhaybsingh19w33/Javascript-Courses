@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script>
+
+        var creditCard = {};
+
+        // creating a new property with name and value as john
+        // all property like enumerable, configurable and writable is set to false
+        Object.defineProperty(creditCard, "name", {
+            value: "John"
+        });
+
+        console.log("name" in creditCard);
+        console.log(creditCard.propertyIsEnumerable("name"));
+
+        delete creditCard.name; // fails because configurable is set to false
+        console.log("name" in creditCard);
+
+        creditCard.name = "Bob"; // fails because writable is set to false
+        console.log(creditCard.name);
+        
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,24 @@
+<html>
+
+<head>
+	<script>
+
+		// when we create a function it creates a prototype, 
+		// then when we create instaance of that function it share this prototype
+		// this prototype is a property of the function
+		// this will share all the prototype and function with all the instances and functions
+		var passenger = {
+			name: "John"
+		};
+
+		console.log("name" in passenger);
+		console.log(passenger.hasOwnProperty("name"));
+		console.log("hasOwnProperty" in passenger);
+		console.log(passenger.hasOwnProperty("hasOwnProperty"));
+
+		console.log(Object.prototype.hasOwnProperty("hasOwnProperty"));
+
+	</script>
+</head>
+
+</html>

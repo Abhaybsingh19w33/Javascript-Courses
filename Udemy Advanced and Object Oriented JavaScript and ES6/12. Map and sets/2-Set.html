@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <script>
+        // can also add in other way
+        // let courses = new Set();
+        // courses.add("Angular");
+        // courses.add("Node");
+        // courses.add("Java");
+
+        // let courses = new Set()
+        //     .add("Angular")
+        //     .add("Node")
+        //     .add("Java");
+
+        // other way
+        // passign an array
+        let courses = new Set(["Angular", "Node", "Java"]);
+
+        for (let entry of courses) {
+            document.write(entry + ' <br>');
+        }
+
+        document.write(courses.size + ' <br>');
+        document.write(courses.has("Node") + ' <br>');
+
+        courses.clear();
+        document.write(courses.size + ' <br>');
+    </script>
+</body>
+
+</html>

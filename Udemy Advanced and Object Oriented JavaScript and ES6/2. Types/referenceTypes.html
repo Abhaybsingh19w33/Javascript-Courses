@@ -1,0 +1,38 @@
+<html>
+<head>
+<script>
+
+//    new will allocate the memory for the instance
+//    obj1 will only point to the memory location of this object
+var obj1 = new Object();
+//    now both are pointyting to the same object
+var obj2 = obj1;
+
+//    any changes made to the obj1 will affect the  obj2
+obj1.myProperty = "All the power is with in you.";
+document.write(obj2.myProperty);
+
+//    deallocating the memory
+//    js will take care of the garbage memory, but we should point the object to null
+obj1 = null;
+obj2 = null;
+
+//    ordered list of element
+var products = new Array();
+//date and time
+var date = new Date();
+//    runtime errors    
+var error = new Error("Something went wrong");
+//    too create a function
+var myFunc = new Function("document.write('Hello')");
+//    regular expression
+var regEx = new RegExp("\\d+")
+
+var obj = new Object();
+obj.salary = 100;
+document.write(obj.salary);
+    
+
+</script>
+</head>
+</html>

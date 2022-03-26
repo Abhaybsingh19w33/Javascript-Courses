@@ -1,0 +1,143 @@
+<html>
+
+<head>
+	<script>
+
+		var creditCard = {
+			_name: "John"
+		};
+
+		// setting enumerable property to false
+		Object.defineProperty(creditCard, "name", {
+			enumerable: false,
+			// this time we are using get property attribute instead of get keyword
+			// advantage is we are defining these accessors on existing properties 
+			// without changing the object itself
+			get: function () {
+				return this._name;
+			},
+			set: function (value) {
+				this._name = value;
+			}
+		});
+
+		console.log("name" in creditCard);
+		console.log(creditCard.propertyIsEnumerable("name"));
+
+		delete creditCard.name;
+
+		console.log("name" in creditCard);
+		creditCard.name = "Bob";
+		console.log(creditCard.name);
+
+		// -----------------------------------------------------------------------------
+
+		var license = {
+			name: "Abhay",
+			number: 1234
+		};
+
+		Object.defineProperties(license, {
+			"name": {
+				enumerable: false,
+				configurable: true,
+				writable: true,
+			},
+			"number": {
+				enumerable: true,
+				configurable: false,
+				writable: true,
+			}
+		});
+
+		var descriptor = Object.getOwnPropertyDescriptors(license);
+		console.log("descriptor.name.enumerable " + descriptor.name.enumerable);
+		console.log("descriptor.number.writable " + descriptor.number.writable);
+		
+
+		Object.seal(license);
+		console.log("Object.isSealed(license) " +Object.isSealed(license));
+
+		// -----------------------------------------------------------------------------
+
+		// var License = {
+		// 	name: "Ben",
+		// 	number: 01
+		// }
+
+		// Object.defineProperties(License, {
+
+		// 	"name": {
+
+		// 		enumerable: false,
+
+		// 		writable: true,
+
+		// 		configurable: true
+
+		// 	},
+
+		// 	"number": {
+
+		// 		enumerable: true,
+
+		// 		writable: false,
+
+		// 		configurable: false
+
+		// 	}
+
+		// });
+
+		// var desc = Object.getOwnPropertyDescriptors(License);
+
+		// console.log(desc.name.enumerable)
+
+		// console.log(desc.number.configurable)
+
+		//----------------------------------------------------
+		// var license = { name: "Ram", number: "KA200710202" }
+
+		// 	Object.defineProperties(license, {
+
+		// 		name: {
+
+		// 			enumerable: false,
+
+		// 			configurable: true,
+
+		// 			writable: true
+
+		// 		},
+
+		// 		number: {
+
+		// 			enumerable: true,
+
+		// 			configurable: false,
+
+		// 			writable: true
+
+		// 		}
+
+		// 	})
+
+		// 	var lObjDescriptorName = Object.getOwnPropertyDescriptor(license, "name");
+
+		// 	document.write("Is Name Enumerable:" + lObjDescriptorName.enumerable + '</br>');
+
+		// 	document.write("Is Name Configurable:" + lObjDescriptorName.configurable + '</br>');
+
+		// 	document.write("Is Name Writable:" + lObjDescriptorName.writable + '</br>');
+
+		// 	var lObjDescriptorNum = Object.getOwnPropertyDescriptor(license, "number");
+
+		// 	document.write("Is Number Enumerable:" + lObjDescriptorNum.enumerable + '</br>');
+
+		// 	document.write("Is Number Configurable:" + lObjDescriptorNum.configurable + '</br>');
+
+		// 	document.write("Is Number Writable:" + lObjDescriptorNum.writable + '</br>');
+	</script>
+</head>
+
+</html>

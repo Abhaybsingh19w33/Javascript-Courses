@@ -1,0 +1,66 @@
+<html>
+
+<head>
+	<script>
+		// IIFE make sure the private values can 
+		// only be accessed using accessor functions
+		// IIFE - immediate invoke function expression
+		// anonymous function - which are enclosed in ()
+		// when the code starts execution this anonymous 
+		// function return the object that can only be 
+		// accessed using the methods defined in the 
+		// anonymous function
+
+		// non-revealing function
+		var account1 = (function () {
+			var balance = 1000;
+
+			return {
+				name: "John",
+				getBalance: function () {
+					return balance;
+				},
+
+				addIntrest: function (intrest) {
+					balance += intrest;
+				}
+			};
+		}());
+
+
+		// revealing module pattern
+		var account = (function () {
+			var balance = 1000;
+
+			function getBalance() {
+				return balance;
+			}
+
+			function addIntrest(intrest) {
+				balance += intrest;
+			}
+
+			return {
+				name: "John",
+				getBalance: getBalance,
+				addIntrest: addIntrest
+			};
+		}());
+
+		console.log(account.name);
+		document.write('account.name ' + account.name + '<br>');
+		console.log(account.getBalance());
+		document.write('account.getBalance() ' + account.getBalance() + '<br>');
+
+		// balance wont change directly
+		account.balance = 2000;
+		console.log(account.getBalance());
+		document.write('account.getBalance() ' + account.getBalance() + '<br>');
+
+		account.addIntrest(300);
+		console.log(account.getBalance());
+		document.write('account.getBalance() ' + account.getBalance() + '<br>');
+	</script>
+</head>
+
+</html>

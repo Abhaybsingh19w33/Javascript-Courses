@@ -1,0 +1,52 @@
+<html>
+
+<body>
+    <script>
+        // let scores = new Map();
+        // scores.set("maths", 90);
+        // scores.set("phys", 90);
+        // scores.set("chem", 90);
+
+        // can also initilize the map like this
+        let scores = new Map([["maths", 90], ["phys", 90], ["chem", 90]]);
+
+        document.write(scores.get('maths') + '<br>');
+        document.write(scores.get('phys') + '<br>');
+        document.write(scores.get('chem') + '<br>');
+
+        // returns the size of the map
+        document.write(scores.size + '<br>');
+        // check of the key exists
+        document.write('scores.has(\'maths\') ' + scores.has('maths') + '<br>');
+        scores.delete('maths');
+        document.write('scores.has(\'maths\') ' + scores.has('maths') + '<br>');
+        document.write('scores.has(\'anyvalue\') ' + scores.has('anyvalue') + '<br>');
+
+        // to clear the scores map
+        scores.clear();
+        document.write('scores size ' + scores.size + '<br>');
+
+        // looping through maps
+
+        let score = new Map([["maths", 90], ["phys", 90], ["chem", 90]]);
+        for (let key of score.keys()) {
+            document.write(key + '<br>');
+            document.write(score.get(key) + '<br>');
+        }
+
+        for (let values of score.values()) {
+            document.write(values + '<br>');
+        }
+
+        // map.entries return the key,value pair in 
+        // form of array
+        for (let entry of score.entries()) {
+            document.write(entry + '<br>');
+        }
+        for (let [k, v] of score.entries()) {
+            document.write('key ' + k + ' value ' + v + '<br>');
+        }
+    </script>
+</body>
+
+</html>

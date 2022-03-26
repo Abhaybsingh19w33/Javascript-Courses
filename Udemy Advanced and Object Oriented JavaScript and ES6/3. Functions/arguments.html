@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<script>
+
+		//    we can procide any number of argument
+		function product() {
+			var result = 1;
+
+			for (var i = 0; i < arguments.length; i++) {
+				result *= arguments[i];
+			}
+
+			return result;
+		}
+
+		// document.write(product(3, 4, 5));
+		// document.write(product(9, 8));
+		// document.write(product(10));
+		// document.write(product());
+
+		// assignment
+		// hoisting
+		multiplyTwoNumbers(3, 2);
+		// function via declaration
+		function multiplyTwoNumbers(num1, num2) {
+			console.log(num1 * num2);
+		}
+		// function via expression
+		var multiplyTwoNumbers2 = function (num1, num2) {
+			return num1 * num2;
+		}
+
+		multiplyTwoNumbers(3, 2);
+		console.log(multiplyTwoNumbers2(3, 2));
+	</script>
+</head>
+
+</html>

@@ -1,0 +1,7 @@
+<!-- export to export the function from this file -->
+export fucntion add{
+
+}
+
+<!-- to import the exported function from the file file-->
+import {add} from "./util.js";

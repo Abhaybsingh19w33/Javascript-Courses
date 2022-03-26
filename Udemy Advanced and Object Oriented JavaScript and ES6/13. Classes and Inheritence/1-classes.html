@@ -1,0 +1,79 @@
+<html>
+
+<body>
+    <script>
+        class Passenger {
+            // consturctor is a function that
+            // assign the class with some
+            // properties and initialize those some
+            // properties
+            constructor(firstname, lastname, frequentFlyerNumber) {
+                this.firstname = firstname;
+                this.lastname = lastname;
+                this.frequentFlyerNuumber = frequentFlyerNumber;
+            }
+        }
+
+        let passenger = new Passenger("abhay", "singh", 1234);
+        document.write(passenger + '<br>');
+        let passenger2 = new Passenger("abhay", "singh", 1234);
+        document.write(passenger2 + '<br>');
+
+        // inheritance
+        class Bmw {
+            constructor(make, model, year) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+
+            start() {
+                document.write("Start  Engine" + '<br>');
+            }
+            stop() {
+                document.write("Stop Engine" + '<br>');
+            }
+        }
+
+        class ThreeSeries extends Bmw {
+            constructor(make, model, year, cruiseControlEnabled) {
+                super(make, model, year);
+                this.cruiseControlEnabled = cruiseControlEnabled;
+            }
+        }
+
+        class FiveSeries extends Bmw {
+            constructor(make, model, year, parkingAssistEnabled) {
+                super(make, model, year);
+                this.parkingAssistEnabled = parkingAssistEnabled;
+            }
+
+            // overridding the parent method
+            start() {
+                document.write("Remote Start Engine" + '<br>');
+            }
+            stop() {
+                document.write("Remote Stop Engine" + '<br>');
+            }
+        }
+
+        let threeSeries = new ThreeSeries("Bmw", "328", 2018, true);
+        let fiveSeries = new FiveSeries("Bmw", "535", 2020, true);
+
+        document.write(threeSeries.make + '<br>');
+        document.write(threeSeries.model + '<br>');
+        document.write(threeSeries.year + '<br>');
+        document.write(threeSeries.cruiseControlEnabled + '<br>');
+        threeSeries.start();
+        threeSeries.stop();
+
+        document.write(fiveSeries.make + '<br>');
+        document.write(fiveSeries.model + '<br>');
+        document.write(fiveSeries.year + '<br>');
+        document.write(fiveSeries.parkingAssistEnabled + '<br>');
+        fiveSeries.start();
+        fiveSeries.stop();
+    </script>
+</body>
+
+</html>

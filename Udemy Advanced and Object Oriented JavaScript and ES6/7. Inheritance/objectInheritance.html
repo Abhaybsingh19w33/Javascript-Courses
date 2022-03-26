@@ -1,0 +1,82 @@
+<html>
+
+<head>
+	<script>
+		var project1 = {
+			name: "Road Work",
+			display: function () {
+				console.log(this.name);
+				document.write(this.name + '<br>');
+			}
+		};
+
+		//  creating peoject2 from inheritence using project1
+		var project2 = Object.create(project1, {
+			name: {
+				configurable: true,
+				enumerable: true,
+				value: "Bridge Work",
+				writable: true
+			}
+		});
+
+		project1.display();
+		project2.display();
+
+		// assignment
+		var car = {
+			model: "DefaultModel",
+			year: "DefaultYear",
+			drive: function () {
+				document.write("Lets GO!! " + this.model + '<br>');
+			}
+		};
+
+		var honda = Object.create(car, {
+			model: {
+				configurable: true,
+				enumerable: true,
+				value: "honda",
+				writable: true
+			},
+			year: {
+				configurable: true,
+				enumerable: true,
+				value: 2000,
+				writable: true
+			}
+		});
+
+		honda.toString = function () {
+			document.write(this.model + '<br>');
+			document.write(this.year + '<br>');
+		}
+
+		var bmw = Object.create(car, {
+			model: {
+				configurable: true,
+				enumerable: true,
+				value: "bmw",
+				writable: true
+			},
+			year: {
+				configurable: true,
+				enumerable: true,
+				value: 2010,
+				writable: true
+			}
+		});
+
+		bmw.toString = function () {
+			document.write(this.model + '<br>');
+			document.write(this.year + '<br>');
+		}
+
+		honda.toString();
+		honda.drive();
+		bmw.toString();
+		bmw.drive();
+	</script>
+</head>
+
+</html>

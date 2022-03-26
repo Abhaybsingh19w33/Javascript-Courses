@@ -1,0 +1,28 @@
+<html>
+
+<head>
+	<script>
+		var product = {
+			name: "Iphone"
+		};
+
+		console.log(Object.isExtensible(product)); //t
+		console.log(Object.isSealed(product));//f
+		console.log(Object.isFrozen(product));//f
+
+		Object.freeze(product);
+
+		console.log(Object.isExtensible(product)); //f
+		console.log(Object.isSealed(product)); //t
+		console.log(Object.isFrozen(product)); //t
+
+		product.name = "Mac Book Pro"; //fail
+		console.log(product.name)
+
+		var descriptor = Object.getOwnPropertyDescriptor(product, "name");
+		console.log(descriptor.configurable);
+		console.log(descriptor.writable);
+	</script>
+</head>
+
+</html>

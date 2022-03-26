@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+var product = {
+	name: "Iphone"
+};
+
+console.log(Object.isExtensible(product)); //true
+Object.preventExtensions(product); // setting extensible to false
+console.log(Object.isExtensible(product));
+
+product.price = 700; // fails
+
+console.log("price" in product);
+</script>
+</head>
+</html>
+
+
+
+
+
+
+
+

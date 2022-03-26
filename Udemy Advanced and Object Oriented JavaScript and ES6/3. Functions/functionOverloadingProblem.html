@@ -1,0 +1,24 @@
+<html>
+
+<head>
+	<script>
+		//here we can so limit the number of parameter
+		//    if we declarer many function of same name, it will always execute the last declaed fucntion
+		//    using arguments array we can code function on our need
+		function add() {
+			document.write(arguments.length)
+
+			if (arguments.length == 3) {
+				return arguments[0] + arguments[1] + arguments[2];
+			}
+			else {
+				return arguments[0] + arguments[1];
+			}
+		}
+
+		document.write(add(2, 3));
+
+	</script>
+</head>
+
+</html>
